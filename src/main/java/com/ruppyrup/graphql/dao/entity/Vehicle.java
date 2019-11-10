@@ -1,4 +1,4 @@
-package com.techshard.graphql.dao.entity;
+package com.ruppyrup.graphql.dao.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

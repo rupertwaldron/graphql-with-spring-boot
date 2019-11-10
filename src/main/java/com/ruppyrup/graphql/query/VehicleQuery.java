@@ -1,8 +1,8 @@
-package com.techshard.graphql.query;
+package com.ruppyrup.graphql.query;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.techshard.graphql.dao.entity.Vehicle;
-import com.techshard.graphql.service.VehicleService;
+import com.ruppyrup.graphql.dao.entity.Vehicle;
+import com.ruppyrup.graphql.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

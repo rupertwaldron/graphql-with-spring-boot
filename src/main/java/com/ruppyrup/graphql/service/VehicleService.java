@@ -1,7 +1,7 @@
-package com.techshard.graphql.service;
+package com.ruppyrup.graphql.service;
 
-import com.techshard.graphql.dao.entity.Vehicle;
-import com.techshard.graphql.dao.repository.VehicleRepository;
+import com.ruppyrup.graphql.dao.entity.Vehicle;
+import com.ruppyrup.graphql.dao.repository.VehicleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
