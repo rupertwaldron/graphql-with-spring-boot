@@ -5,7 +5,6 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
 
 @Data
 @EqualsAndHashCode
@@ -29,7 +28,7 @@ public class Vehicle implements Serializable {
     private String brandName;
 
     @Column(name = "launch_date")
-    private LocalDate launchDate;
+    private String launchDate;
 
     private transient  String formattedDate;
 

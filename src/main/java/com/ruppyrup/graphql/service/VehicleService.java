@@ -2,6 +2,7 @@ package com.ruppyrup.graphql.service;
 
 import com.ruppyrup.graphql.dao.entity.Vehicle;
 import com.ruppyrup.graphql.dao.repository.VehicleRepository;
+import com.ruppyrup.graphql.exceptions.VehicleNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +26,7 @@ public class VehicleService {
         vehicle.setType(type);
         vehicle.setModelCode(modelCode);
         vehicle.setBrandName(brandName);
-        vehicle.setLaunchDate(LocalDate.parse(launchDate));
+        vehicle.setLaunchDate(launchDate);
         return this.vehicleRepository.save(vehicle);
     }
 
@@ -37,5 +38,12 @@ public class VehicleService {
     @Transactional(readOnly = true)
     public Optional<Vehicle> getVehicle(final int id) {
         return this.vehicleRepository.findById(id);
+    }
+
+    @Transactional
+    public Vehicle deleteVehicle(final int id) {
+        Vehicle vehicle = vehicleRepository.findById(id).orElseThrow(new VehicleNotFoundException("Vehicle not found for deletion", id));
+        this.vehicleRepository.deleteById(id);
+        return vehicle;
     }
 }

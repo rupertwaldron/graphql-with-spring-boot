@@ -16,5 +16,7 @@ public class VehicleMutation implements GraphQLMutationResolver {
         return this.vehicleService.createVehicle(type, modelCode, brandName, launchDate);
     }
 
-
+    public Vehicle deleteVehicle(final int id) {
+        return this.vehicleService.deleteVehicle(id);
+    }
 }
